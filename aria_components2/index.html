@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <!-- class="flex place-items-baseline justify-around"-->
+    <div
+      id="overlay"
+      class="absolute w-full h-full bg-opacity-20 bg-gray-500 z-50"
+    ></div>
+    <dialog
+      aria-labelledby="dialogTitle"
+      aria-describedby="dialogDesc"
+      id="accessibleDialog"
+    >
+      <h2 id="dialogTitle" class="text-2xl font-bold mb-4">
+        Exempel på tillgängligt modalfönster med &lt;dialog&gt;
+      </h2>
+      <p id="dialogDesc">Här är innehållet i modalfönstret.</p>
+      <button
+        id="closeDialogBtn"
+        aria-label="closeDialogWindow"
+        class="bg-blue-500 text-white px-4 py-2 mt-4 rounded hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300"
+      >
+        Stäng
+      </button>
+    </dialog>
+    <button
+      id="openbutton"
+      onclick="openDialog()"
+      class="border-2 rounded-md border-black p-1 m-2 hover:bg-gray-200 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300"
+    >
+      öppna
+    </button>
+    <!--hamburgarmeny-->
+    <button
+      ariahaspopup="menu"
+      aria-expanded="false"
+      id="menuButton"
+      class="border-2 rounded-md border-black p-1 m-2 hover:bg-gray-200 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300"
+    >
+      Meny
+    </button>
+    <nav aria-controls="menuButton" id="menuContent" class="menuContent hidden">
+      <ul>
+        <li
+          class="border-2 rounded-md border-black p-1 m-2 hover:bg-gray-200 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300"
+        >
+          <a href="#">Hem</a>
+        </li>
+        <li
+          class="border-2 rounded-md border-black p-1 m-2 hover:bg-gray-200 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300"
+        >
+          <a href="#">Om oss</a>
+        </li>
+        <li
+          class="border-2 rounded-md border-black p-1 m-2 hover:bg-gray-200 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300"
+        >
+          <a href="#">Tjänster</a>
+        </li>
+        <li
+          class="border-2 rounded-md border-black p-1 m-2 hover:bg-gray-200 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300"
+        >
+          <a href="#">Kontakt</a>
+        </li>
+      </ul>
+    </nav>
+    <!--hamburgarmeny-->
+    <script src="main.js" charset="utf-8"></script>
+  </body>
+</html>
+<!--
+  -med tack vare <dialog> så kan man skriva mindre kod.
+  -dialog designar en popup ruta åt dig
+  -aria behövs inte heller för att skärmläsaren ska fungera.
+-->
